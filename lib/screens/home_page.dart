@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:language_leaning_english/screens/color_page.dart';
 import 'package:language_leaning_english/screens/number_page.dart';
 
 import '../widgets/category.dart';
+import 'family_members.dart';
+import 'phrases_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,9 +24,21 @@ class HomePage extends StatelessWidget {
               return const NumberPage();
             }));
           }),
-          Category(const Color(0xff558b37), "family member", () {}),
-          Category(const Color(0xff79359f), "Color", () {}),
-          Category(const Color(0xff50edc7), "Phrases", () {}),
+          Category(const Color(0xff558b37), "family member", () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const FamilyMember();
+            }));
+          }),
+          Category(const Color(0xff79359f), "Color", () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const ColorPage();
+            }));
+          }),
+          Category(const Color.fromARGB(255, 105, 143, 241), "Phrases", () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const PhrasesPage();
+            }));
+          }),
         ],
       ),
     );

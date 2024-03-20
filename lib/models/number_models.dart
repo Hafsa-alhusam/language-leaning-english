@@ -1,7 +1,7 @@
-class Number {
-  final String image;
+class ItemModel {
+  final String? image;
   final String jpName;
   final String enName;
 
-  const Number({required this.image, required this.jpName, required this.enName});
+  const ItemModel({this.image, required this.jpName, required this.enName});
 }
